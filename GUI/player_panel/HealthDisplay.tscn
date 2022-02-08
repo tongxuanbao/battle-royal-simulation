@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI/player_panel/HealthBar2D.gd" type="Script" id=2]
+[ext_resource path="res://GUI/player_panel/HealthDisplay.gd" type="Script" id=3]
+
+[node name="HealthBar" type="Sprite3D"]
+billboard = 1
+script = ExtResource( 3 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 220, 90 )
+transparent_bg = true
+usage = 0
+render_target_v_flip = true
+
+[node name="Panel" type="Panel" parent="Viewport"]
+self_modulate = Color( 1, 1, 1, 0.862745 )
+margin_right = 220.0
+margin_bottom = 90.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Viewport/Panel"]
+margin_right = 220.0
+margin_bottom = 90.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Viewport/Panel/CenterContainer"]
+margin_left = 91.0
+margin_top = 17.0
+margin_right = 129.0
+margin_bottom = 72.0
+
+[node name="Name" type="Label" parent="Viewport/Panel/CenterContainer/VBoxContainer"]
+margin_right = 38.0
+margin_bottom = 14.0
+text = "Name"
+
+[node name="Anime" type="Label" parent="Viewport/Panel/CenterContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 38.0
+margin_bottom = 32.0
+text = "Name"
+
+[node name="Kills" type="Label" parent="Viewport/Panel/CenterContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 38.0
+margin_bottom = 50.0
+text = "Rank"
+
+[node name="HealthBar2D" type="TextureProgress" parent="Viewport/Panel/CenterContainer/VBoxContainer"]
+margin_top = 54.0
+margin_right = 38.0
+margin_bottom = 55.0
+max_value = 50.0
+script = ExtResource( 2 )

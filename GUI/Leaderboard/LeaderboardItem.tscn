@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GUI/Leaderboard/LeaderboardItem.gd" type="Script" id=1]
+[ext_resource path="res://addons/silent_wolf/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.831373, 0.415686, 0.415686, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="ScoreItem" type="Panel"]
+margin_right = 250.0
+margin_bottom = 21.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 250, 21 )
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerName" type="RichTextLabel" parent="."]
+margin_right = 168.0
+margin_bottom = 20.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Mirajane Strauss [#7]"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="."]
+margin_left = 215.063
+margin_top = 1.25085
+margin_right = 248.063
+margin_bottom = 22.2508
+custom_fonts/font = SubResource( 3 )
+text = "13"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rank" type="Label" parent="."]
+margin_left = 173.451
+margin_top = 1.12373
+margin_right = 206.451
+margin_bottom = 22.1237
+custom_fonts/font = SubResource( 3 )
+text = "13"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="mouse_entered" from="." to="." method="_on_ScoreItem_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_ScoreItem_mouse_exited"]
+[connection signal="mouse_entered" from="PlayerName" to="." method="_on_ScoreItem_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerName" to="." method="_on_ScoreItem_mouse_exited"]
+[connection signal="mouse_entered" from="Score" to="." method="_on_ScoreItem_mouse_entered"]
+[connection signal="mouse_exited" from="Score" to="." method="_on_ScoreItem_mouse_exited"]
+[connection signal="mouse_entered" from="Rank" to="." method="_on_ScoreItem_mouse_entered"]

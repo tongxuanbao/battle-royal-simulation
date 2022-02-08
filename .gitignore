@@ -1,0 +1,19 @@
+# Import cache
+.import/
+
+# Binaries
+bin/
+build/
+lib/
+
+addons/
+assets/**/*.tscn
+
+# Release
+**/*.import
+**/*.pack
+**/*.pck
+**/*.exe
+**/*.cfg
+**/*.txt
+**/*.bin
