@@ -1,2 +1,2 @@
 # battle-royal-simulation
-The battle royal of female characters
+The battle royal of anime characters
